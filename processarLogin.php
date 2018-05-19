@@ -20,6 +20,7 @@ if($existe){
 			session_start();
 			$_SESSION['ID'] = $row['ID'];
 			$_SESSION['Nome'] = $row['Nome'];
+			$_SESSION['Tipo'] = $tipo;
 				//entrar como cliente treinador ou admin
 			if($tipo == 0){
 				header("location:entradaCliente.php");

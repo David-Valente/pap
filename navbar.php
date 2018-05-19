@@ -64,13 +64,20 @@
 						<!-- START #fh5co-menu-wrap -->
 						<nav id="fh5co-menu-wrap" role="navigation">
 							<ul class="sf-menu" id="fh5co-primary-menu">
-								<li class="active">
-									<a href="index.php">Home</a>
-								</li>
+								<?php 
+									if(isset($_SESSION) && $_SESSION['Tipo'] == 0)
+										echo "<li><a href='entradaCliente.php'>Home</a></li>";
+									else
+										echo "<li><a href='index.php'>Home</a></li>";
+								 ?>
 								<li>
 									<a href="classes.php" class="fh5co-sub-ddown">Aulas</a>
 								</li>
 								<li><a href="trainer.php">Treinadores</a></li>
+								<?php 
+										if(isset($_SESSION) && $_SESSION['Tipo'] == 0)
+											echo "<li><a href='mensalidades.php'>Mensalidades</a></li>";
+								 ?>
 								<li><a href="about.php">Sobre nós</a></li>
                                 <li><a href="login.php">Login</a></li>
 							</ul>
